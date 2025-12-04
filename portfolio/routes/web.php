@@ -9,7 +9,7 @@ use App\Http\Controllers\ProfileController;
 // });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('backend.pages.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -24,3 +24,4 @@ Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/resume', [PageController::class, 'resume'])->name('resume');
 Route::get('/projects', [PageController::class, 'projects'])->name('projects');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+
