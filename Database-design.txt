@@ -1,0 +1,100 @@
+Home page
+===================
+
+heroproperties -> HeroProperty
+------------------------------
+string(keyLine)
+string(title)
+string(short_title)
+string(img)
+
+abouts -> About
+------------------------------
+string(title)
+text(details)
+
+socials -> Social
+-------------------------------
+
+string(icon_name)
+string(social_link)
+
+Resume page
+===================
+
+resumes -> Resume
+------------------------------
+
+string(downloadLink)
+
+experiences -> Experience
+------------------------------
+
+string(duration)
+string(title)
+string(designation)
+text(details)
+
+educations -> Education
+------------------------------
+
+string(duration)
+string(institutionName)
+string(field)
+string(subject)
+text(details)
+
+
+skills -> Skill
+------------------------------
+
+string(name)
+
+
+languages -> Language 
+------------------------------
+
+string(name)
+
+
+Projects page
+===================
+
+projects -> Project 
+------------------------------
+
+string(title)
+string(projectLink)->nullable()
+string(thumbnailImg)
+text(details)
+
+
+Contacts page
+===================
+
+contacts-> Contact 
+------------------------------
+
+string(fullName)
+string(email)
+string(phone)
+text(message)->nullable()
+
+=========================================================
+
+seoproperties-> SeoProperty 
+------------------------------
+
+enum(pageNmae,[home,resume,projects,contact])
+string(title)
+string(keywords)
+string(description)
+string(ogSiteName)
+string(ogUrl)
+string(ogTitle)
+string(ogDescription)
+string(ogImage)
+
+
+
+
