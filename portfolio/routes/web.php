@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\HeroPropertyController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -20,6 +21,10 @@ Route::middleware('auth')->group(function () {
 
     //logout route
     Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
+
+    //HeroProperty routes
+    Route::get('/home/heroProperty',[HeroPropertyController::class, 'index'])->name('heroProperties.index');
+    Route::post('/home/heroProperty',[HeroPropertyController::class, 'store'])->name('heroProperties.store');
 });
 
 require __DIR__.'/auth.php';
