@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\HeroPropertyController;
 
@@ -25,6 +26,9 @@ Route::middleware('auth')->group(function () {
     //HeroProperty routes
     Route::get('/home/heroProperty',[HeroPropertyController::class, 'index'])->name('heroProperties.index');
     Route::post('/home/heroProperty',[HeroPropertyController::class, 'store'])->name('heroProperties.store');
+    //About routes
+    Route::get('/home/about',[AboutController::class, 'index'])->name('abouts.index');
+    Route::post('/home/about',[AboutController::class, 'store'])->name('abouts.store');
 });
 
 require __DIR__.'/auth.php';

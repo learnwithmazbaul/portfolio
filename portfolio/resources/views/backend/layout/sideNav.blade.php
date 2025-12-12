@@ -13,10 +13,10 @@
                 Home Page
                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
             </a>
-            <div class="collapse {{ request()->is('home*') ? 'show' : ''}}" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+            <div class="collapse {{ request()->is('home*') ? 'show' : '' }}" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                 <nav class="sb-sidenav-menu-nested nav">
                     <a class="nav-link {{ request()->is('home/heroProperty') ? 'active' : '' }}" href="{{ route('heroProperties.index') }}">Hero Property</a>
-                    <a class="nav-link " href="about-section.html">About section</a>
+                    <a class="nav-link {{ request()->is('home/about') ? 'active' : '' }}" href="{{ route('abouts.index') }}">About section</a>
                     <a class="nav-link " href="social-link.html">Social Link</a>
                 </nav>
             </div>

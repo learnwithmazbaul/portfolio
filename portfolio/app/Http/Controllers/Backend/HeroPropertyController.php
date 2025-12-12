@@ -66,10 +66,11 @@ class HeroPropertyController extends Controller
                     'img' => $filePath
                 ]
             );
-
+            flash()->success('Hero Property created successfully!');
             return redirect()->route('heroProperties.index');
 
         }catch(Exception $e){
+            flash()->error('Something went wrong!');
             return redirect()->back()->with('error', "Something went wrong");
         }
     }
