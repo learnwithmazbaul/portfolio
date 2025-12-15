@@ -7,7 +7,7 @@
                 Dashboard
             </a>
             <div class="sb-sidenav-menu-heading">Pages</div>
-            <a class="nav-link collapsed show" href="" data-bs-toggle="collapse" data-bs-target="#collapseLayouts"
+            <a class="nav-link collapsed show {{ request()->is('home*') ? 'active':'' }}" href="" data-bs-toggle="collapse" data-bs-target="#collapseLayouts"
                 aria-expanded="false" aria-controls="collapseLayouts">
                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                 Home Page
@@ -21,15 +21,15 @@
                 </nav>
             </div>
 
-            <a class="nav-link collapsed " href="/resume" data-bs-toggle="collapse" data-bs-target="#resumePage"
+            <a class="nav-link collapsed {{ request()->is('resume*') ? 'active':'' }}" href="/resume" data-bs-toggle="collapse" data-bs-target="#resumePage"
                 aria-expanded="false" aria-controls="resumePage">
                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                 Resume Page
                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
             </a>
-            <div class="collapse " id="resumePage" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+            <div class="collapse {{ request()->is('resume*') ? 'show' : '' }}" id="resumePage" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                 <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link " href="resume.html">Resume</a>
+                    <a class="nav-link {{ request()->is('resume/download') ? 'active' : '' }} " href="{{ route('resume.index') }}">Resume</a>
                     <a class="nav-link " href="experience.html">Experience</a>
                     <a class="nav-link " href="education.html">Education</a>
                     <a class="nav-link " href="professional-skills.html">Professional Skills</a>

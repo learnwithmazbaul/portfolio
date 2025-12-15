@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Backend\AboutController;
+use App\Http\Controllers\Backend\ResumeController;
 use App\Http\Controllers\Backend\SocialController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\HeroPropertyController;
@@ -32,6 +33,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/home/about',[AboutController::class, 'store'])->name('abouts.store');
     //Social routes
     Route::resource('/home/socials', SocialController::class);
+
+    // Resume routes
+    Route::get('/resume/download',[ResumeController::class, 'index'])->name('resume.index');
+    Route::post('/resume/updateOrCreate',[ResumeController::class, 'store'])->name('resume.store');
 });
 
 require __DIR__.'/auth.php';
