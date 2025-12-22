@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\ResumeController;
 use App\Http\Controllers\Backend\SocialController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\EducationController;
 use App\Http\Controllers\Backend\ExperienceController;
 use App\Http\Controllers\Backend\HeroPropertyController;
 
@@ -41,6 +42,9 @@ Route::middleware('auth')->group(function () {
 
     // Experience routes
     Route::resource('/resume/experiences', ExperienceController::class);
+
+    // Education routes
+    Route::resource('/resume/educations', EducationController::class);
 });
 
 require __DIR__.'/auth.php';
