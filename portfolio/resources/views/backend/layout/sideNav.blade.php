@@ -30,7 +30,7 @@
             <div class="collapse {{ request()->is('resume*') ? 'show' : '' }}" id="resumePage" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                 <nav class="sb-sidenav-menu-nested nav">
                     <a class="nav-link {{ request()->is('resume/download') ? 'active' : '' }} " href="{{ route('resume.index') }}">Resume</a>
-                    <a class="nav-link " href="experience.html">Experience</a>
+                    <a class="nav-link {{ request()->is('resume/experiences') ? 'active' : '' }}" href="{{ route('experiences.index') }}">Experience</a>
                     <a class="nav-link " href="education.html">Education</a>
                     <a class="nav-link " href="professional-skills.html">Professional Skills</a>
                     <a class="nav-link " href="languages.html">Languages</a>

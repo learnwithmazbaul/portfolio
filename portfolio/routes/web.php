@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\ResumeController;
 use App\Http\Controllers\Backend\SocialController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\ExperienceController;
 use App\Http\Controllers\Backend\HeroPropertyController;
 
 // Route::get('/', function () {
@@ -37,6 +38,9 @@ Route::middleware('auth')->group(function () {
     // Resume routes
     Route::get('/resume/download',[ResumeController::class, 'index'])->name('resume.index');
     Route::post('/resume/updateOrCreate',[ResumeController::class, 'store'])->name('resume.store');
+
+    // Experience routes
+    Route::resource('/resume/experiences', ExperienceController::class);
 });
 
 require __DIR__.'/auth.php';
