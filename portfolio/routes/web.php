@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Backend\AboutController;
+use App\Http\Controllers\Backend\SkillController;
 use App\Http\Controllers\Backend\ResumeController;
 use App\Http\Controllers\Backend\SocialController;
 use App\Http\Controllers\Backend\DashboardController;
@@ -45,6 +46,9 @@ Route::middleware('auth')->group(function () {
 
     // Education routes
     Route::resource('/resume/educations', EducationController::class);
+
+    // Skill routes
+    Route::resource('/resume/skills', SkillController::class);
 });
 
 require __DIR__.'/auth.php';

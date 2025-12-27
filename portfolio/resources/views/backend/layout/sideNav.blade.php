@@ -32,7 +32,7 @@
                     <a class="nav-link {{ request()->is('resume/download') ? 'active' : '' }} " href="{{ route('resume.index') }}">Resume</a>
                     <a class="nav-link {{ request()->is('resume/experiences') ? 'active' : '' }}" href="{{ route('experiences.index') }}">Experience</a>
                     <a class="nav-link {{ request()->is('resume/educations') ? 'active' : '' }}" href="{{ route('educations.index') }}">Education</a>
-                    <a class="nav-link " href="professional-skills.html">Professional Skills</a>
+                    <a class="nav-link {{ request()->is('resume/skills') ? 'active' : '' }}" href="{{ route('skills.index') }}">Professional Skills</a>
                     <a class="nav-link " href="languages.html">Languages</a>
                 </nav>
             </div>
