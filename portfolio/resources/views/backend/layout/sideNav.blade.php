@@ -37,7 +37,7 @@
                 </nav>
             </div>
 
-            <a class="nav-link " href="project.html">
+            <a class="nav-link {{ request()->is('all/projects') ? 'active' : '' }}" href="{{ route('projects.index') }}">
                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                 Project
             </a>

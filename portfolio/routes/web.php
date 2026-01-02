@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\SkillController;
 use App\Http\Controllers\Backend\ResumeController;
 use App\Http\Controllers\Backend\SocialController;
+use App\Http\Controllers\Backend\ProjectController;
 use App\Http\Controllers\Backend\LanguageController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\EducationController;
@@ -53,6 +54,9 @@ Route::middleware('auth')->group(function () {
 
     // Language routes
     Route::resource('/resume/languages', LanguageController::class);
+
+    // Language routes
+    Route::resource('/all/projects', ProjectController::class);
 });
 
 require __DIR__.'/auth.php';
