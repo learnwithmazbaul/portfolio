@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\SkillController;
 use App\Http\Controllers\Backend\ResumeController;
 use App\Http\Controllers\Backend\SocialController;
+use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\ProjectController;
 use App\Http\Controllers\Backend\LanguageController;
 use App\Http\Controllers\Backend\DashboardController;
@@ -57,6 +58,8 @@ Route::middleware('auth')->group(function () {
 
     // Language routes
     Route::resource('/all/projects', ProjectController::class);
+
+    Route::resource('/all/contacts',ContactController::class)->only(['index','edit','update','destroy']);
 });
 
 require __DIR__.'/auth.php';
@@ -66,3 +69,5 @@ Route::get('/resume', [PageController::class, 'resume'])->name('resume');
 Route::get('/projects', [PageController::class, 'projects'])->name('projects');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 
+// contact store route
+Route::resource('/all/contacts',ContactController::class)->only(['store','create']);

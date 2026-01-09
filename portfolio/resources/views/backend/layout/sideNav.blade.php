@@ -42,7 +42,7 @@
                 Project
             </a>
 
-            <a class="nav-link " href="contact.html">
+            <a class="nav-link {{ request()->is('all/contacts') ? 'active' : '' }}" href="{{ route('contacts.index') }}">
                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                 Contact
             </a>
