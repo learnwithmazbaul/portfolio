@@ -47,7 +47,7 @@
                 Contact
             </a>
 
-            <a class="nav-link " href="seo-property.html">
+            <a class="nav-link " href="{{ route('properties.index') }}">
                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                 SEO Property
             </a>

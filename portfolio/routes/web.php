@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\LanguageController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\EducationController;
 use App\Http\Controllers\Backend\ExperienceController;
+use App\Http\Controllers\Backend\SeoPropertyController;
 use App\Http\Controllers\Backend\HeroPropertyController;
 
 // Route::get('/', function () {
@@ -60,6 +61,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('/all/projects', ProjectController::class);
 
     Route::resource('/all/contacts',ContactController::class)->only(['index','edit','update','destroy']);
+
+    // SeoProperty routes
+    Route::resource('/seo/properties', SeoPropertyController::class);
 });
 
 require __DIR__.'/auth.php';
