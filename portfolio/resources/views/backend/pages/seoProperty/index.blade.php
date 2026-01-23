@@ -42,9 +42,9 @@
                     </thead>
 
                     <tbody>
-                        @foreach ($seoProperties as $seoProperty)
+                        @foreach ($seoProperties as $key=>$seoProperty)
                             <tr>
-                                <td>1</td>
+                                <td>{{ $key+1}}</td>
                                 <td>
                                     <img src="{{ asset($seoProperty->ogImage) }}" width="50" height="50" alt="">
                                 </td>
