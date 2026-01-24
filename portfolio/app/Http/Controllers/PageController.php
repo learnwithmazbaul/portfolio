@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\Skill;
 use App\Models\Resume;
 use App\Models\Social;
+use App\Models\Project;
 use App\Models\Language;
 use App\Models\Education;
 use App\Models\Experience;
@@ -31,7 +32,8 @@ class PageController extends Controller
     }
 
     public function projects(){
-        return view('frontend.pages.projects');
+        $projects = Project::all();
+        return view('frontend.pages.projects',compact('projects'));
     }
 
     public function contact(){
