@@ -10,6 +10,7 @@ use App\Models\Project;
 use App\Models\Language;
 use App\Models\Education;
 use App\Models\Experience;
+use App\Models\SeoProperty;
 use App\Models\HeroProperty;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,8 @@ class PageController extends Controller
         $heroProperty = HeroProperty::select('keyLine','title','short_title','img')->first();
         $about = About::first();
         $socialLinks = Social::all();
-        return view('frontend.pages.index',compact('heroProperty','about','socialLinks'));
+        $seo = SeoProperty::where('pageName','home')->first();
+        return view('frontend.pages.index',compact('heroProperty','about','socialLinks','seo'));
     }
 
     public function resume(){
@@ -28,15 +30,18 @@ class PageController extends Controller
         $educations = Education::all();
         $skills = Skill::all();
         $languages = Language::all();
-        return view('frontend.pages.resume',compact('resume','experiences','educations','skills','languages'));
+        $seo = SeoProperty::where('pageName','resume')->first();
+        return view('frontend.pages.resume',compact('resume','experiences','educations','skills','languages','seo'));
     }
 
     public function projects(){
         $projects = Project::all();
-        return view('frontend.pages.projects',compact('projects'));
+        $seo = SeoProperty::where('pageName','projects')->first();
+        return view('frontend.pages.projects',compact('projects','seo'));
     }
 
     public function contact(){
-        return view('frontend.pages.contact');
+        $seo = SeoProperty::where('pageName','contact')->first();
+        return view('frontend.pages.contact',compact('seo'));
     }
 }
